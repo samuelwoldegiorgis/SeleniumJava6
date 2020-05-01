@@ -3,21 +3,39 @@ package com.syntax.class02;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class BrowserCommands {
-	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-		   WebDriver driver=new ChromeDriver();
-		  
-		   driver.manage().window().maximize();
-		   driver.get("https://www.facebook.com");
-		   Thread.sleep(4000);
-		   driver.navigate().to("https.google.com");
-		   driver.navigate().refresh();
-		  // driver.navigate().back();
-		   Thread.sleep(4000);
-		 //  driver.navigate().to("https://www.google.com");
-				  
+public class Recap {
+
+	public static void main(String[] args) {
+
+		/*
+		 * Commands with Page
+		 * getCurrentURL
+		 * get()
+		 * getTitle();
+		 */
+
+		String fbUrl="https://www.facebook.com";
+
+		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");//window users add .exe
+
+		WebDriver driver=new ChromeDriver();
+
+		driver.get(fbUrl);
+
+		String url=driver.getCurrentUrl();
+
+		System.out.println("Current URL is: "+url);
+
+		String title=driver.getTitle();
+
+		System.out.println("Title of the page is: "+title);
+
+		driver.close();
+
+
+
+
+
 	}
 
 
